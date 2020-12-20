@@ -3,6 +3,10 @@
     --secondary-color: blanchedalmond;
 }
 
+:any-link {
+    text-decoration: none !important;
+}
+
 html {
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -27,8 +31,8 @@ body {
 header {
     display: flex;
     flex-flow: row;
-    background-color: black;
     justify-content: space-between;
+    background-color: black;
     height: 100px;
     position: -webkit-sticky;
     position: sticky;
@@ -46,7 +50,11 @@ header a {
 header h1 a {
     flex-direction: column;
     justify-content: center;
-    border-color: #5e5d5d;
+    background-color: rgb(54, 54, 54);
+    text-align: center;
+    width: 215px;
+    margin: 10px;
+    padding: 10px;
 }
 
 header nav {
@@ -70,6 +78,10 @@ header nav ul li {
     flex-direction: column-reverse;
 }
 
+.hero-title {
+    align-items: flex-end;
+}
+
 .hero h2 {
     color: #d4c005;
     font-size: 36px;
@@ -78,32 +90,40 @@ header nav ul li {
     width: 215px;
     margin: 10px;
     padding: 10px;
-    justify-content: end;
 }
 
 /* end hero*/
 
 /* begin body*/
 
-.container {
-    display: flex;
-    flex-flow: column wrap;
+/* about me*/
+
+.about-me {
     width: 100%;
-    margin: 0, auto;
+    display: inline-grid;
 }
 
-.me,
-.portfolio,
-.contact {
+.me {
+    width: 30%;
+    border-right: black 5px;
+}
+
+.para {
+    width: 70%;
     align-content: space-around;
+    display: inline;
 }
 
+.bio-img {
+    height: 25%;
+}
 
-
-.projects {
+/* about me end*/
+/* work */
+.portfolio {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px;
     grid-auto-flow: dense;
@@ -111,6 +131,13 @@ header nav ul li {
     overflow: hidden;
 
 }
+
+.portfolio-title {
+    grid-row: 1;
+    grid-column: 1;
+    border-right: black;
+}
+
 
 .proj {
     border: 5px solid rgba(0, 0, 0, 0.75);
@@ -121,27 +148,35 @@ header nav ul li {
 }
 
 .item-1 {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
     background-image: url("../images/coluseum.jpg");
 
 }
 
 .item-2 {
+    grid-column: 4;
+    grid-row: 1;
     background-image: url("../images/sedona.jpg");
 
 }
 
 .item-3 {
+    grid-column: 4;
+    grid-row: 2;
     background-image: url("../images/500-hero-mock-up-1 run buddy hero section.jpg");
 }
 
 .item-4 {
+    grid-column: 2;
+    grid-row: 2;
     background-image: url("../images/tijuana.png");
 
 }
 
 .item-5 {
+    grid-column: 2;
+    grid-row: 3;
     background-image: url("../images/ship.png");
 }
 
@@ -163,16 +198,33 @@ header nav ul li {
     text-indent: -999em;
 }
 
-
-
-
+/* work end */
+/* contact */
 .contact {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.links {
-    display: inline;
+ul {
+    list-style-type: none;
 }
+
+.links ul li a {
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+
+/* contact end*/
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px)
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px)
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px)
