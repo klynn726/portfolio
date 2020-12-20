@@ -78,8 +78,7 @@ header nav ul li {
     width: 215px;
     margin: 10px;
     padding: 10px;
-    justify-content: right;
-
+    justify-content: end;
 }
 
 /* end hero*/
@@ -88,14 +87,16 @@ header nav ul li {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    flex-flow: column;
+    flex-flow: column wrap;
     width: 100%;
     margin: 0, auto;
-
 }
 
-
+.me,
+.portfolio,
+.contact {
+    align-content: space-around;
+}
 
 
 
@@ -106,28 +107,62 @@ header nav ul li {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px;
     grid-auto-flow: dense;
-}
-
-.item-1 {
-    grid-column: span 3;
-    grid-row: span 2;
-    border: 5px solid rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
 
 }
 
 .proj {
-    width: 100%;
-    max-height: 300px;
+    border: 5px solid rgba(0, 0, 0, 0.75);
     background-size: cover;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    border: 5px solid rgba(0, 0, 0, 0.25);
+    background-position: 80%;
+    opacity: 0.5;
     position: relative;
-    overflow: hidden;
 }
+
+.item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-image: url("../images/coluseum.jpg");
+
+}
+
+.item-2 {
+    background-image: url("../images/sedona.jpg");
+
+}
+
+.item-3 {
+    background-image: url("../images/500-hero-mock-up-1 run buddy hero section.jpg");
+}
+
+.item-4 {
+    background-image: url("../images/tijuana.png");
+
+}
+
+.item-5 {
+    background-image: url("../images/ship.png");
+}
+
+.proj:hover {
+    opacity: 1;
+}
+
+.click-1,
+.click-2,
+.click-3,
+.click-4,
+.click-5 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    text-indent: -999em;
+}
+
 
 
 
@@ -136,4 +171,8 @@ header nav ul li {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.links {
+    display: inline;
 }
