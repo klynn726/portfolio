@@ -1,5 +1,5 @@
 :root {
-    --primary-color: var(--primary-color);
+    --primary-color: rgb(49, 49, 49);
     --secondary-color: blanchedalmond;
 }
 
@@ -25,6 +25,7 @@ body {
 /* begin header*/
 
 header {
+    width: 100%;
     display: flex;
     flex-flow: row;
     background-color: black;
@@ -34,7 +35,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 9999;
-
 }
 
 header a {
@@ -78,38 +78,57 @@ header nav ul li {
     width: 215px;
     margin: 10px;
     padding: 10px;
-    justify-content: end;
 }
 
 /* end hero*/
 
 /* begin body*/
 
-.container {
-    display: flex;
-    flex-flow: column wrap;
+/* about me */
+
+.me {
     width: 100%;
-    margin: 0, auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1, 1fr;
+    grid-gap: 15px;
+    grid-auto-flow: dense;
+    justify-self: center;
+    padding: 25px;
 }
 
-.me,
-.portfolio,
-.contact {
-    align-content: space-around;
+.me-title {
+    grid-column: 1;
+    font-size: 3vh;
+    align-self: center;
+    text-align: center;
+}
+
+.para {
+    grid-column: span 2;
+    align-self: center;
+}
+
+.me-img {
+    overflow: hidden;
+    align-self: center;
 }
 
 
+/* about me end */
+
+/* work */
 
 .projects {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px;
     grid-auto-flow: dense;
     position: relative;
     overflow: hidden;
-
+    padding: 25px;
 }
 
 .proj {
@@ -120,9 +139,15 @@ header nav ul li {
     position: relative;
 }
 
+.proj-title {
+    grid-row: 1 / span 3;
+    font-size: 3vh;
+    justify-self: center;
+}
+
 .item-1 {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
     background-image: url("../images/coluseum.jpg");
 
 }
@@ -163,16 +188,50 @@ header nav ul li {
     text-indent: -999em;
 }
 
+/* work end */
 
-
+/* contact */
 
 .contact {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 3vh;
 }
 
-.links {
+.links,
+.link-title {
     display: inline;
+    align-self: center;
 }
+
+.link-title {
+    font-size: 3vh;
+    text-align: center;
+}
+
+.links a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+/* contact end */
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+
+@media screen and (max-width: 980px) {
+
+    header {
+        justify-content: center;
+    }
+
+}
+
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {}
+
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {}
